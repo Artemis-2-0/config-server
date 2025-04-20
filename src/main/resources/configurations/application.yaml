@@ -1,7 +1,7 @@
 eureka:
   instance:
-    hostname: localhost
-    port: 6091
+    hostname: ${EUREKA_HOSTNAME:localhost}
+    port: ${EUREKA_PORT:6091}
   client:
     register-with-eureka: true
     fetch-registry: true
@@ -10,3 +10,9 @@ eureka:
   cloud:
     config:
       override.system-properties: false
+application:
+  user-info:
+    user-id: X-USER-ID
+    username: X-USER-NAME
+    service-id: X-SERVICE-ID
+    account-type: X-ACCOUNT-TYPE

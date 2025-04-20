@@ -1,16 +1,10 @@
-# application.yaml
+# application-prod.yaml
 server:
   port: 6090
 spring:
-  application:
-    name: config-server
-  profiles:
-    active: native
-    group:
-      prod:
-        - native
   cloud:
     config:
       server:
         native:
           search-locations: classpath:/configurations
+

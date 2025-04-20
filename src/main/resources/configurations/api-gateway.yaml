@@ -1,0 +1,34 @@
+server:
+  port: 6092
+spring:
+  datasource:
+#    url: jdbc:postgresql://localhost:5432/artemis_gatewaydb
+#    username: artemis_gateway_admin
+#    password: password
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  cloud:
+    gateway:
+#      routes:
+#        - id: account-management
+#          uri: lb:http://ACCOUNT-MANAGEMENT
+#          predicates:
+#            - Path=/api/v1/artemis/account/secured/**
+#          filters:
+#            - AuthenticationFilter # Apply authentication for secure endpoints
+#        - id: account-management-public
+#          uri: lb:http://ACCOUNT-MANAGEMENT
+#          predicates:
+#            - Path=/api/v1/artemis/account/public/**
+#          filters: []
+#        - id: auth-service
+#          uri: lb:http://AUTH-SERVICE
+#          predicates:
+#              - Path=/api/v1/artemis/auth/**
+      discovery:
+        locator:
+          enabled: true

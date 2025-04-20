@@ -1,0 +1,5 @@
+server:
+  port: 6093
+logging:
+  file:
+    name: logs/account-management/spring-boot.log
