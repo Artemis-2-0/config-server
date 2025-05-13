@@ -1,0 +1,16 @@
+server:
+  port: 6096
+spring:
+  datasource:
+    url: jdbc:postgresql://${POSTGRES_URL:localhost:5432}/${POSTGRES_SCHEMA:ledger_servicedb}
+    username: ${POSTGRES_USERNAME:ledgeradmin}
+    password: ${POSTGRES_PASSWORD:password}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+logging:
+  file:
+    name: logs/ledger-service/spring-boot.log

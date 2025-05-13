@@ -1,0 +1,14 @@
+server:
+  port: 6095
+spring:
+  neo4j:
+    uri: ${NEO4J_URI:bolt://localhost:7688}
+    authentication:
+      username: ${NEO4J_USERNAME:neo4j}
+      password: ${NEO4J_PASSWORD:password}
+  data:
+    neo4j:
+      database: artemis.customer
+logging:
+  file:
+    name: logs/customer-management/spring-boot.log
